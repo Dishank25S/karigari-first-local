@@ -141,7 +141,7 @@ const ProjectShowcase: React.FC = () => {
               transition={{ duration: 0.8, delay: index * 0.05 }}
               className={`group relative cursor-pointer ${project.span}`}
             >
-              <div className="relative overflow-hidden rounded-xl border border-white/10 backdrop-blur-sm transition-transform duration-300 hover:scale-[1.01]">
+              <div className="relative overflow-hidden border border-white/10 backdrop-blur-sm transition-transform duration-300 hover:scale-[1.01]">
                 <div className={`relative ${project.aspectRatio}`}>
                   <img
                     src={project.image}

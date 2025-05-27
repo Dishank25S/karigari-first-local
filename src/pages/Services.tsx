@@ -74,8 +74,7 @@ const Services: React.FC = () => {
                     to={service.link}
                     className="inline-flex items-center text-gold hover:text-gold-dark transition-colors group"
                   >
-                    Learn more
-                    <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    
                   </Link>
                 </div>
                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
