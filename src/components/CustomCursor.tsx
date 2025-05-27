@@ -1,115 +1,66 @@
-import React, { useEffect, useRef, useCallback } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const CustomCursor: React.FC = () => {
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
-  const isVisible = useRef(false);
-  const isHovering = useRef(false);
-  const isClicking = useRef(false);
-  const cursorRef = useRef<HTMLDivElement>(null);
-
-  // Use spring for smoother cursor movement
-  const springConfig = { damping: 25, stiffness: 700 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
-
-  const handleLinkHover = useCallback((e: MouseEvent) => {
-    const target = e.target as HTMLElement;    isHovering.current = !!(
-      target.tagName === 'A' || 
-      target.tagName === 'BUTTON' || 
-      target.closest('a') || 
-      target.closest('button') ||
-      target.tagName === 'INPUT' ||
-      target.tagName === 'TEXTAREA' ||
-      target.getAttribute('role') === 'button' ||
-      target.classList.contains('cursor-pointer')
-    );
-
-    if (cursorRef.current) {
-      cursorRef.current.style.transform = `translate3d(${cursorX.get() - 8}px, ${cursorY.get() - 8}px, 0) scale(${isHovering.current ? 1.5 : 1})`;
-    }
-  }, [cursorX, cursorY]);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-    };
+    // Hide system cursor
+    const style = document.createElement('style');
+    style.innerHTML = `* { cursor: none !important; }`;
+    document.head.appendChild(style);
 
-    const handleMouseEnter = () => {
-      document.body.style.cursor = 'none';
-      isVisible.current = true;
-      if (cursorRef.current) {
-        cursorRef.current.style.display = 'block';
-      }
-    };
+    const move = (e: MouseEvent) => setPosition({ x: e.clientX, y: e.clientY });
+    const down = () => setIsActive(true);
+    const up = () => setIsActive(false);
 
-    const handleMouseLeave = () => {
-      document.body.style.cursor = 'auto';
-      isVisible.current = false;
-      if (cursorRef.current) {
-        cursorRef.current.style.display = 'none';
-      }
-    };
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mousedown', down);
+    document.addEventListener('mouseup', up);
 
-    const handleMouseDown = () => {
-      isClicking.current = true;
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${cursorX.get() - 8}px, ${cursorY.get() - 8}px, 0) scale(0.8)`;
-      }
-    };
-
-    const handleMouseUp = () => {
-      isClicking.current = false;
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${cursorX.get() - 8}px, ${cursorY.get() - 8}px, 0) scale(${isHovering.current ? 1.5 : 1})`;
-      }
-    };
-
-    // Add passive: true for better performance
-    window.addEventListener('mousemove', updateMousePosition, { passive: true });
-    window.addEventListener('mousemove', handleLinkHover, { passive: true });
-    window.addEventListener('mousedown', handleMouseDown, { passive: true });
-    window.addEventListener('mouseup', handleMouseUp, { passive: true });
-    document.addEventListener('mouseenter', handleMouseEnter);
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    // Initial cursor state
-    if (window.matchMedia && !window.matchMedia('(hover: none)').matches) {
-      document.body.style.cursor = 'none';
-      isVisible.current = true;
-      if (cursorRef.current) {
-        cursorRef.current.style.display = 'block';
-      }
-    }
+    const interactiveElements = document.querySelectorAll(
+      'a, button, input, textarea, select, [role="button"], .cursor-pointer'
+    );
+    interactiveElements.forEach((el) => {
+      el.addEventListener('mouseenter', down);
+      el.addEventListener('mouseleave', up);
+    });
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-      window.removeEventListener('mousemove', handleLinkHover);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mouseenter', handleMouseEnter);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.body.style.cursor = 'auto';
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mousedown', down);
+      document.removeEventListener('mouseup', up);
+      interactiveElements.forEach((el) => {
+        el.removeEventListener('mouseenter', down);
+        el.removeEventListener('mouseleave', up);
+      });
+      document.head.removeChild(style);
     };
-  }, [handleLinkHover, cursorX, cursorY]);
+  }, []);
 
   return (
     <motion.div
-      ref={cursorRef}
-      className="cursor-ring mix-blend-difference"
       style={{
-        translateX: cursorXSpring,
-        translateY: cursorYSpring,
-        display: isVisible.current ? 'block' : 'none'
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+        zIndex: 9999,
+        border: '2px solid #FFD700',
+        backgroundColor: 'transparent',
+        borderRadius: '50%',
       }}
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      animate={{
+        x: position.x - 10,
+        y: position.y - 10,
+        width: isActive ? 8 : 20,
+        height: isActive ? 8 : 20,
+      }}
       transition={{
-        type: "spring",
-        stiffness: 700,
-        damping: 25
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
       }}
     />
   );

@@ -60,20 +60,17 @@ const TeamPreview: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group relative bg-[#F5F5F5] border border-[#E5E5E5]"
+              className="group relative bg-white border border-[#E5E5E5] shadow-sm"
             >
               <div className="relative aspect-square overflow-hidden">
-                {/* Grayscale image that transitions to color on hover */}
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 img-zoom-effect"
+                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
-                {/* Overlay that fades in on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                {/* Text content that appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="text-[#171717] text-lg font-medium mb-1">{member.name}</h3>
+                  <h3 className="text-white text-lg font-medium mb-1">{member.name}</h3>
                   <p className="text-gold text-sm">{member.role}</p>
                 </div>
               </div>
