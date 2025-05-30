@@ -35,6 +35,21 @@ const Kaaya: React.FC = () => {
     }
   ];
 
+  const reasons = [
+    {
+      title: "Holistic Expertise",
+      description: "Our team blends design science, psychology, and sensory strategy to transform spaces beyond aesthetics."
+    },
+    {
+      title: "Brand-Centric Design",
+      description: "We ensure every sensory detail reinforces your brand identity and narrative."
+    },
+    {
+      title: "Data-Driven Outcomes",
+      description: "We don’t just design—we measure, analyze, and refine to ensure perceptual and business goals are met."
+    }
+  ];
+
   return (
     <div className="pt-24 bg-white text-[#171717]">
       {/* Hero Section */}
@@ -99,6 +114,40 @@ const Kaaya: React.FC = () => {
               >
                 <h3 className="text-xl mb-4 text-[#171717]">{service.title}</h3>
                 <p className="text-[#4B5563]">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose KAAYA Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="mb-6 text-[#171717]">Why Choose KAAYA?</h2>
+            <p className="max-w-2xl mx-auto text-[#4B5563]">
+              Discover what sets KAAYA apart in crafting multisensory environments that captivate and convert.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reasons.map((reason, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-[#F5F5F5] p-8 border border-[#E5E5E5]"
+              >
+                <h3 className="text-xl mb-4 text-[#171717]">{reason.title}</h3>
+                <p className="text-[#4B5563]">{reason.description}</p>
               </motion.div>
             ))}
           </div>
@@ -233,6 +282,7 @@ const Kaaya: React.FC = () => {
           </div>
         </div>
       </section>
+
       <ContactSection />
     </div>
   );

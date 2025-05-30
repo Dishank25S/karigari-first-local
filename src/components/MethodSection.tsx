@@ -33,15 +33,16 @@ const methodSteps: MethodStep[] = [
 
 const MethodSection: React.FC = () => {
   return (
-    <section className="section bg-secondary-light dark:bg-secondary-dark relative overflow-hidden transition-colors duration-300">
+    <section className="section bg-white relative overflow-hidden transition-colors duration-300">
+      {/* Optional soft background decoration */}
       <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-neutral-700/20 rounded-full -mr-48 -mt-48"
+        className="absolute top-0 right-0 w-96 h-96 bg-gray-100 rounded-full -mr-48 -mt-48"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       />
-      
+
       <div className="container-custom relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,8 +51,8 @@ const MethodSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-6 text-primary-light dark:text-primary-dark">Our Method</h2>
-          <p className="max-w-2xl mx-auto text-secondary-light dark:text-secondary-dark">
+          <h2 className="mb-6 text-gray-900 font-semibold text-3xl">Our Method</h2>
+          <p className="max-w-2xl mx-auto text-gray-600">
             Our approach combines deep human perception insights with meticulous craftsmanship to create designs that resonate on a profound level.
           </p>
         </motion.div>
@@ -65,24 +66,26 @@ const MethodSection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ y: -5 }}
-              className="bg-primary-light dark:bg-primary-dark p-8 relative group cursor-pointer border border-divider-light dark:border-divider-dark"
+              className="bg-gray-50 p-8 relative group cursor-pointer border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition"
             >
               <motion.div
                 initial={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary-light dark:bg-secondary-dark text-gold mb-6 group-hover:bg-gold group-hover:text-primary-light dark:group-hover:text-primary-dark transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 text-gray-800 mb-6 transition-all duration-300 group-hover:bg-yellow-400 group-hover:text-white"
               >
                 {step.icon}
               </motion.div>
-              <h3 className="text-xl mb-3 text-primary-light dark:text-primary-dark group-hover:text-gold transition-colors duration-300">{step.title}</h3>
-              <p className="text-secondary-light dark:text-secondary-dark">{step.description}</p>
+              <h3 className="text-xl mb-3 text-gray-900 font-medium transition-colors duration-300 group-hover:text-yellow-500">
+                {step.title}
+              </h3>
+              <p className="text-gray-600">{step.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
       <motion.div
-        className="absolute bottom-0 left-0 w-64 h-64 bg-neutral-700/20 rounded-full -ml-32 -mb-32"
+        className="absolute bottom-0 left-0 w-64 h-64 bg-gray-100 rounded-full -ml-32 -mb-32"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
