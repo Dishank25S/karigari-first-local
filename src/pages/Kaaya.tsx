@@ -177,7 +177,7 @@ const Kaaya: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <ol className="relative border-l border-gold pl-8 space-y-12">
+              <ol className="relative border-l border-cyan-200 pl-8 space-y-12">
                 {[
                   {
                     title: "Discovery",
@@ -208,7 +208,7 @@ const Kaaya: React.FC = () => {
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     className="relative"
                   >
-                    <div className="absolute -left-12 mt-1.5 h-6 w-6 rounded-full bg-gold flex items-center justify-center text-white text-sm font-medium">
+                    <div className="absolute -left-12 mt-1.5 h-6 w-6 rounded-full bg-cyan-200 flex items-center justify-center text-white text-sm font-medium">
                       {index + 1}
                     </div>
                     <h3 className="text-xl mb-2 text-[#171717]">{step.title}</h3>
@@ -238,51 +238,32 @@ const Kaaya: React.FC = () => {
       {/* Testimonial Section */}
       <section className="py-16 md:py-24 bg-[#F5F5F5]">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-              className="bg-white p-10 border border-[#E5E5E5] text-center"
-            >
-              <h2 className="text-3xl font-serif italic mb-8 text-[#4B5563]">
-                "KAAYA transformed our retail environment into an immersive brand experience. Customer dwell time increased by 40% and we've seen a significant uplift in sales conversion."
-              </h2>
-              <div className="flex items-center justify-center">
-                <div className="w-16 h-16 bg-[#E5E5E5] rounded-full mr-4"></div>
-                <div className="text-left">
-                  <p className="font-medium text-[#171717]">Client Name</p>
-                  <p className="text-sm text-[#4B5563]">Head of Retail Experience, Leading Brand</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="mb-12 text-center"
+          >
+            <h2 className="mb-6 text-[#171717]">What Our Clients Say</h2>
+            <p className="text-[#4B5563]">
+              Hear from those who have experienced the transformative power of KAAYA.
+            </p>
+          </motion.div>
+          <motion.blockquote
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center italic text-[#4B5563]"
+          >
+            “KAAYA completely transformed our retail space. The attention to every sensory detail made our brand story come alive in ways we never imagined.”
+            <br />— Neha Mehta, Brand Manager
+          </motion.blockquote>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="mb-6 text-[#171717]">Ready to Transform Your Space?</h2>
-              <p className="text-[#4B5563] mb-8">
-                Contact us to discuss how KAAYA can help you create spaces that engage all senses and leave lasting impressions.
-              </p>
-              <Link to="/contact" className="btn btn-primary">
-                Get Started with KAAYA
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
+      {/* Contact Section */}
       <ContactSection />
     </div>
   );

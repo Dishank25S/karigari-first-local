@@ -9,9 +9,9 @@ const Contact: React.FC = () => {
 
   return (
     <div className="pt-24">
-      <section className="">
+      <section>
         <div className="container-custom">
-          
+          {/* You can optionally add a header or breadcrumbs here */}
         </div>
       </section>
       <ContactSection />

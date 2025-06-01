@@ -47,7 +47,7 @@ const CustomCursor: React.FC = () => {
         left: 0,
         pointerEvents: 'none',
         zIndex: 9999,
-        border: '2px solid #FFD700',
+        border: '2px solid #000000', // changed from #FFD700 (gold) to black
         backgroundColor: 'transparent',
         borderRadius: '50%',
       }}

@@ -10,14 +10,12 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const navLinkClasses = ({ isActive }: { isActive: boolean }) => 
+  const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
     `relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
-      isActive ? 'text-gold' : 'text-[#171717] hover:text-gold'
-    } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold after:transition-all after:duration-300 ${
+      isActive ? 'text-black' : 'text-black hover:text-cyan-500'
+    } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-cyan-500 after:transition-all after:duration-300 ${
       isActive ? 'after:w-full' : 'hover:after:w-full'
     }`;
 
@@ -25,14 +23,14 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'header-blur shadow-lg border-b border-[#E5E5E5] py-3 bg-white' 
+          ? 'header-blur shadow-lg border-b border-gray-300 py-3 bg-white' 
           : 'bg-white py-5'
       }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <span className="text-xl md:text-2xl font-serif font-medium tracking-tight text-[#171717]">
+            <span className="text-xl md:text-2xl font-serif font-medium tracking-tight text-cyan-500">
               Karigari
             </span>
           </Link>
@@ -51,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
           <div className="md:hidden flex items-center space-x-4">
             <button 
-              className="text-[#171717] focus:outline-none"
+              className="text-black focus:outline-none"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
@@ -63,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
       {isMenuOpen && (
         <motion.div 
-          className="md:hidden bg-white backdrop-blur-md w-full border-b border-[#E5E5E5]"
+          className="md:hidden bg-white backdrop-blur-md w-full border-b border-gray-300"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
@@ -74,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               <NavLink 
                 to="/about" 
                 className={({ isActive }) => 
-                  `block py-2 ${isActive ? 'text-gold' : 'text-[#171717] hover:text-gold'}`
+                  `block py-2 text-sm ${isActive ? 'text-black' : 'text-black hover:text-cyan-500'}`
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -83,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               <NavLink 
                 to="/services" 
                 className={({ isActive }) => 
-                  `block py-2 ${isActive ? 'text-gold' : 'text-[#171717] hover:text-gold'}`
+                  `block py-2 text-sm ${isActive ? 'text-black' : 'text-black hover:text-cyan-500'}`
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -92,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               <NavLink 
                 to="/kalp" 
                 className={({ isActive }) => 
-                  `block py-2 ${isActive ? 'text-gold' : 'text-[#171717] hover:text-gold'}`
+                  `block py-2 text-sm ${isActive ? 'text-black' : 'text-black hover:text-cyan-500'}`
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -101,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               <NavLink 
                 to="/kaaya" 
                 className={({ isActive }) => 
-                  `block py-2 ${isActive ? 'text-gold' : 'text-[#171717] hover:text-gold'}`
+                  `block py-2 text-sm ${isActive ? 'text-black' : 'text-black hover:text-cyan-500'}`
                 }
                 onClick={() => setIsMenuOpen(false)}
               >

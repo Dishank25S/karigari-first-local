@@ -47,11 +47,12 @@ const TeamPreview: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-6 text-[#171717]">Meet Our Team</h2>
-          <p className="max-w-2xl mx-auto text-[#4B5563]">
+          <h2 className="mb-6 text-black font-semibold text-3xl">Meet Our Team</h2>
+          <p className="max-w-2xl mx-auto text-gray-600">
             Our team of expert designers and perception specialists bring diverse perspectives and deep expertise to every project.
           </p>
         </motion.div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
@@ -60,7 +61,7 @@ const TeamPreview: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group relative bg-white border border-[#E5E5E5] shadow-sm"
+              className="group relative bg-white border border-gray-200 shadow-sm"
             >
               <div className="relative aspect-square overflow-hidden">
                 <img
@@ -70,13 +71,14 @@ const TeamPreview: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="text-white text-lg font-medium mb-1">{member.name}</h3>
-                  <p className="text-gold text-sm">{member.role}</p>
+                  <h3 className="text-white text-lg font-semibold mb-1">{member.name}</h3>
+                  <p className="text-cyan-200 text-sm">{member.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
         <motion.div 
           className="mt-12 text-center"
           initial={{ opacity: 0 }}
@@ -84,7 +86,10 @@ const TeamPreview: React.FC = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <Link to="/about" className="btn btn-primary">
+          <Link
+            to="/about"
+            className="inline-block px-6 py-3 bg-cyan-200 text-black font-semibold rounded-md shadow hover:bg-cyan-300 transition"
+          >
             About Our Team
           </Link>
         </motion.div>

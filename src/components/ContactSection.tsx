@@ -61,15 +61,16 @@ const ContactSection: React.FC = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-lg font-medium mb-2 text-white">Email</h4>
-                  <a href="mailto:hello@karigari.studio" className="text-yellow-400 hover:text-yellow-300 transition-colors">
+                  <a
+                    href="mailto:hello@karigari.studio"
+                    className="text-black bg-white px-2 py-1 rounded-md inline-block hover:opacity-90 transition"
+                  >
                     hello@karigari.studio
                   </a>
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-2 text-white">Location</h4>
-                  <p className="text-gray-200">
-                    Mumbai, India
-                  </p>
+                  <p className="text-gray-200">Mumbai, India</p>
                 </div>
               </div>
             </motion.div>
@@ -79,7 +80,7 @@ const ContactSection: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="bg-white/80 p-8 border border-[#E5E5E5] backdrop-blur-md rounded-xl"
+              className="bg-white p-8 border border-[#E5E5E5] backdrop-blur-md rounded-xl shadow-lg"
             >
               <h3 className="text-2xl mb-6 text-[#171717]">Get in Touch</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
@@ -133,7 +134,11 @@ const ContactSection: React.FC = () => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary w-full flex items-center justify-center" disabled={loading}>
+                <button
+                  type="submit"
+                  className="w-full flex items-center justify-center bg-black hover:bg-neutral-800 text-white font-medium py-3 px-6 rounded-full transition duration-300"
+                  disabled={loading}
+                >
                   {loading ? "Sending..." : "Send Message"}
                   {!loading && <Send size={18} className="ml-2" />}
                 </button>
