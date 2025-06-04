@@ -71,11 +71,11 @@ const MethodSection: React.FC = () => {
               <motion.div
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 text-gray-800 mb-6 transition-all duration-300 group-hover:bg-cyan-200 group-hover:text-white"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 text-gray-800 mb-6 transition-all duration-300 group-hover:bg-black group-hover:text-white"
               >
                 {step.icon}
               </motion.div>
-              <h3 className="text-xl mb-3 text-gray-900 font-medium transition-colors duration-300 group-hover:text-cyan-200">
+              <h3 className="text-xl mb-3 text-gray-900 font-medium transition-colors duration-300 group-hover:text-black">
                 {step.title}
               </h3>
               <p className="text-gray-600">{step.description}</p>

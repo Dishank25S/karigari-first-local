@@ -135,7 +135,7 @@ const Kalp: React.FC = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start"
                   >
-                    <span className="flex-shrink-0 h-6 w-6 rounded-full bg-cyan-200 flex items-center justify-center mr-3 mt-0.5">
+                    <span className="flex-shrink-0 h-6 w-6 rounded-full bg-black flex items-center justify-center mr-3 mt-0.5">
                       <Check size={14} className="text-white" />
                     </span>
                     <p className="text-[#4B5563]">{benefit}</p>

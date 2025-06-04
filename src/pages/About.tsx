@@ -133,7 +133,7 @@ const About: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                     <h3 className="text-white text-lg mb-1">Team Member {item}</h3>
-                    <p className="text-cyan-200 mb-2">Design Role</p>
+                    <p className="text-black mb-2">Design Role</p>
                     <p className="text-gray-100 text-sm">
                       "Design is not just what it looks like and feels like. Design is how it works."
                     </p>

@@ -28,7 +28,7 @@ const HomeHero: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-block text-cyan-500 font-serif text-base md:text-lg lg:text-xl mb-4"
+            className="inline-block text-black font-serif text-base md:text-lg lg:text-xl mb-4"
           >
             Premium Design Studio
           </motion.span>
@@ -40,7 +40,7 @@ const HomeHero: React.FC = () => {
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
                 transition={{ duration: 1, delay: 1 }}
-                className="absolute bottom-0 left-0 h-0.5 bg-cyan-500"
+                className="absolute bottom-0 left-0 h-0.5 bg-black"
               ></motion.span>
             </span>{' '}
             Through Design
@@ -51,14 +51,13 @@ const HomeHero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <Link
               to="/services"
-              className="btn bg-black text-white hover:bg-cyan-600 border-none group w-full sm:w-auto justify-center"
+              className="btn bg-black text-white hover:bg-gray-800 border-none group w-full sm:w-auto justify-center"
             >
               Explore Our Services
               <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
+            </Link>            <Link
               to="/about"
-              className="btn border border-black text-black hover:bg-cyan-500 hover:text-white w-full sm:w-auto justify-center"
+              className="btn border border-black text-black hover:bg-black hover:text-white w-full sm:w-auto justify-center"
             >
               About Us
             </Link>
@@ -66,18 +65,16 @@ const HomeHero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Decorative elements */}
-      <motion.div
+      {/* Decorative elements */}      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.1, scale: 1 }}
         transition={{ duration: 2 }}
-        className="absolute top-1/4 right-10 w-32 md:w-48 lg:w-64 h-32 md:h-48 lg:h-64 border border-cyan-500 rounded-full"
-      ></motion.div>
-      <motion.div
+        className="absolute top-1/4 right-10 w-32 md:w-48 lg:w-64 h-32 md:h-48 lg:h-64 border border-black rounded-full"
+      ></motion.div>      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.1, scale: 1 }}
         transition={{ duration: 2, delay: 0.5 }}
-        className="absolute bottom-1/4 right-32 w-24 md:w-32 lg:w-40 h-24 md:h-32 lg:h-40 border border-cyan-500 rounded-full"
+        className="absolute bottom-1/4 right-32 w-24 md:w-32 lg:w-40 h-24 md:h-32 lg:h-40 border border-black rounded-full"
       ></motion.div>
     </section>
   );

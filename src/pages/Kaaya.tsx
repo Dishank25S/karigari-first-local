@@ -177,7 +177,7 @@ const Kaaya: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <ol className="relative border-l border-cyan-200 pl-8 space-y-12">
+              <ol className="relative border-l border-black pl-8 space-y-12">
                 {[
                   {
                     title: "Discovery",
@@ -208,7 +208,7 @@ const Kaaya: React.FC = () => {
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     className="relative"
                   >
-                    <div className="absolute -left-12 mt-1.5 h-6 w-6 rounded-full bg-cyan-200 flex items-center justify-center text-white text-sm font-medium">
+                    <div className="absolute -left-12 mt-1.5 h-6 w-6 rounded-full bg-black flex items-center justify-center text-white text-sm font-medium">
                       {index + 1}
                     </div>
                     <h3 className="text-xl mb-2 text-[#171717]">{step.title}</h3>
