@@ -51,7 +51,7 @@ const Kaaya: React.FC = () => {
   ];
 
   return (
-    <div className="pt-24 bg-white text-[#171717]">
+    <div className="pt-16 bg-white text-[#171717]">
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">

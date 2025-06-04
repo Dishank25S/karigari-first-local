@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ContactSection from '../components/ContactSection';
 
@@ -49,7 +48,7 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-24 bg-white text-[#171717]">
+    <div className="pt-16 bg-white text-[#171717]">
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-[#F5F5F5]">
         <div className="container-custom">

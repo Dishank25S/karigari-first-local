@@ -17,7 +17,7 @@ const HomeHero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 pt-20">
+      <div className="container-custom relative z-10 pt-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

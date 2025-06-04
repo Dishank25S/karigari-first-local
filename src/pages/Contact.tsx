@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ContactSection from '../components/ContactSection';
-import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
   useEffect(() => {
@@ -8,7 +7,7 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       <section>
         <div className="container-custom">
           {/* You can optionally add a header or breadcrumbs here */}

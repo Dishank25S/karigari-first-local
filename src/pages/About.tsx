@@ -1,14 +1,42 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
 
 const About: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+    const teamMembers = [
+    { id: 1, name: 'Team Member 1', role: 'Design Lead', quote: 'Design is not just what it looks like and feels like. Design is how it works.' },
+    { id: 2, name: 'Team Member 2', role: 'UX Designer', quote: 'Good design is obvious. Great design is transparent.' },
+    { id: 3, name: 'Team Member 3', role: 'Brand Strategist', quote: 'Design creates culture. Culture shapes values. Values determine the future.' },
+    { id: 4, name: 'Team Member 4', role: 'Creative Director', quote: 'Simplicity is the ultimate sophistication.' },
+    { id: 5, name: 'Team Member 5', role: 'Visual Designer', quote: 'Design is thinking made visual.' },
+    { id: 6, name: 'Team Member 6', role: 'Product Designer', quote: 'The best designs are the ones you don\'t notice.' },
+    { id: 7, name: 'Team Member 7', role: 'Design Researcher', quote: 'Design is intelligence made visible.' },
+    { id: 8, name: 'Team Member 8', role: 'Art Director', quote: 'Every great design begins with an even better story.' }
+  ];  // One member per slide
+  const totalSlides = teamMembers.length;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 5000); // Change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
   useEffect(() => {
     document.title = 'About | Karigari';
   }, []);
-
   return (
-    <div className="pt-24 bg-white dark:bg-primary-dark transition-colors duration-300">
+    <div className="pt-16 bg-white dark:bg-primary-dark transition-colors duration-300">
       {/* Story Section */}
       <section className="py-16 md:py-24 bg-white dark:bg-secondary-dark">
         <div className="container-custom">
@@ -112,35 +140,75 @@ const About: React.FC = () => {
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
               Meet the talented individuals who bring their passion, expertise, and diverse perspectives to every project.
             </p>
-          </motion.div>
+          </motion.div>          {/* Team Carousel */}
+          <div className="relative">
+            {/* Carousel Container */}
+            <div className="overflow-hidden">
+              <AnimatePresence mode="wait">                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 300 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -300 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="flex justify-center"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="group relative bg-white dark:bg-primary-dark border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden max-w-md w-full"
+                  >
+                    <div className="relative aspect-square overflow-hidden">
+                      <img
+                        src={`https://images.pexels.com/photos/${1000000 + teamMembers[currentSlide].id * 10}/pexels-photo-${1000000 + teamMembers[currentSlide].id * 10}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2`}
+                        alt={teamMembers[currentSlide].name}
+                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                      <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <h3 className="text-white text-lg mb-1">{teamMembers[currentSlide].name}</h3>
+                        <p className="text-gray-300 mb-2">{teamMembers[currentSlide].role}</p>
+                        <p className="text-gray-100 text-sm italic">
+                          "{teamMembers[currentSlide].quote}"
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group relative bg-white dark:bg-primary-dark border border-gray-200 dark:border-gray-700"
-              >
-                <div className="relative aspect-square overflow-hidden">
-                  <img
-                    src={`https://images.pexels.com/photos/${1000000 + item * 10}/pexels-photo-${1000000 + item * 10}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2`}
-                    alt="Team member"
-                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                  <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <h3 className="text-white text-lg mb-1">Team Member {item}</h3>
-                    <p className="text-black mb-2">Design Role</p>
-                    <p className="text-gray-100 text-sm">
-                      "Design is not just what it looks like and feels like. Design is how it works."
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            {/* Slide Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-black scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
