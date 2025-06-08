@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logo from '../../public/karigari-logo.svg';
 
 interface HeaderProps {
   scrolled: boolean;
@@ -38,9 +39,12 @@ const Header: React.FC<HeaderProps> = ({ isVisible }) => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <span className="font-serif font-medium tracking-tight text-black text-xl sm:text-2xl">
-              Karigari
-            </span>
+            <img
+              src={logo}
+              alt="Karigari Logo"
+              className="h-10 w-auto object-contain"
+              style={{ maxWidth: '160px' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
