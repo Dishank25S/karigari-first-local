@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logo from '../../public/karigari-logo.svg';
+import logo from '/karigari-logo.svg';
 
 interface HeaderProps {
   scrolled: boolean;
