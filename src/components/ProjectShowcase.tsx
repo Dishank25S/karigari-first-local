@@ -78,7 +78,11 @@ const ProjectShowcase: React.FC = () => {
               Explore our selected works that showcase our commitment to perception-driven design excellence.
             </p>
           </motion.div>
-        </div>        <div className="space-y-16 lg:space-y-24">          {/* Special layout for first two projects - side by side with staggered positioning */}          {projects.slice(0, 2).length === 2 && (
+        </div>
+        {/* Desktop/Laptop Layout */}
+        <div className="hidden md:block">
+          {/* Special layout for first two projects - side by side with staggered positioning */}
+          {projects.slice(0, 2).length === 2 && (
             <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
               <div className="flex justify-between">
                 {/* Left Project */}
@@ -204,6 +208,38 @@ const ProjectShowcase: React.FC = () => {
               </motion.div>
             );
           })}
+        </div>
+        {/* Mobile Layout */}
+        <div className="block md:hidden space-y-8">
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8 }}
+              className="group border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm"
+            >
+              <div className={`relative w-full ${project.aspectRatio}`}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4 space-y-2">
+                <span className="text-black text-xs tracking-widest font-medium uppercase block">
+                  {project.category}
+                </span>
+                <h3 className="text-primary-light dark:text-primary-dark text-lg font-serif font-bold leading-tight">
+                  {project.title}
+                </h3>
+                <p className="text-secondary-light dark:text-secondary-dark text-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
