@@ -68,11 +68,11 @@ const Kalp: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="overflow-hidden border border-[#E5E5E5] bg-[#F5F5F5] rounded-lg">
+              <div className="overflow-hidden border border-[#E5E5E5] bg-[#F5F5F5] rounded-none">
                 <img
                   src="https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="KALP Framework Visualization"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover rounded-none"
                 />
               </div>
             </motion.div>
