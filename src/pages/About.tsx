@@ -6,14 +6,13 @@ import ContactSection from '../components/ContactSection';
 const About: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const teamMembers = [
-    { id: 1, name: 'Team Member 1', role: 'Design Lead', quote: 'Design is not just what it looks like and feels like. Design is how it works.' },
-    { id: 2, name: 'Team Member 2', role: 'UX Designer', quote: 'Good design is obvious. Great design is transparent.' },
-    { id: 3, name: 'Team Member 3', role: 'Brand Strategist', quote: 'Design creates culture. Culture shapes values. Values determine the future.' },
-    { id: 4, name: 'Team Member 4', role: 'Creative Director', quote: 'Simplicity is the ultimate sophistication.' },
-    { id: 5, name: 'Team Member 5', role: 'Visual Designer', quote: 'Design is thinking made visual.' },
-    { id: 6, name: 'Team Member 6', role: 'Product Designer', quote: 'The best designs are the ones you don\'t notice.' },
-    { id: 7, name: 'Team Member 7', role: 'Design Researcher', quote: 'Design is intelligence made visible.' },
-    { id: 8, name: 'Team Member 8', role: 'Art Director', quote: 'Every great design begins with an even better story.' }
+    { id: 1, name: 'AMIT SHARMA', role: 'Founder & PQ Pioneer', quote: 'What lies between a great idea and a great product - Craftsmanship.' },
+    { id: 2, name: 'SHIVAKKUMAR SMK', role: 'Design Quality Lead', quote: 'Designers have a duty not just to innovate for now, but to build for a future we may never see, but others will live in.' },
+    { id: 3, name: 'RUTUJA BHIDE', role: 'Design & Business Strategist', quote: "Strategy isn't about endless possibilities; it's about the precise focus on the right problems, solved creatively to deliver maximum impact." },
+    { id: 4, name: 'SUJAL AGRAWAL', role: 'Materiality & Sensory Quality Expert', quote: 'Design, to me, is the art of translating emotion into form where each detail builds a subtle, lasting relationship with the user.' },
+    { id: 5, name: 'SHREYA JATHAVEDAN', role: 'User Researcher', quote: 'Design starts with empathy, but it grows with evidence.' },
+    { id: 6, name: 'YASH NEWARE', role: 'Functional Experience Expert', quote: 'When form meets flawless function, perceived quality becomes a promise kept.' },
+    { id: 7, name: 'SAIRAJ PANCHAL', role: 'Surface Appearance Expert', quote: 'Design and innovation aren’t just tools, they are my guiding principles, the twin engines that drive every masterpiece I create.' }
   ];  // One member per slide
   const totalSlides = teamMembers.length;
 
@@ -94,13 +93,28 @@ const About: React.FC = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: 'Mission', text: 'To transform how people experience design by creating solutions that engage all senses and elevate perception, bringing meaningful value to our clients and their audiences.' },
-              { title: 'Vision', text: 'To be the global leader in perception-driven design, setting new standards for how brands connect with people through thoughtful, sensory-rich experiences.' },
+            { [
               {
-                title: 'Values',
-                text: ['Craftsmanship in every detail', 'Human-centered approach', 'Continuous innovation', 'Integrity and transparency', 'Collaborative excellence'],
+                title: 'Foresight',
+                text: [
+                  'Designing a world where quality is not explained - it’s experienced.',
+                  'We imagine a future where design goes beyond functionality - where perception, emotion, and craft combine to create products that resonate deeply and stand apart.'
+                ]
               },
+              {
+                title: 'Drive',
+                text: [
+                  'Elevating how people experience products - by bridging creativity, technology, and human perception.',
+                  'At Karigari, we design with intent, decode what users feel, and craft visual and tactile expressions that build trust, clarity, and delight.'
+                ]
+              },
+              {
+                title: 'Essence',
+                text: [
+                  'To champion the invisible — the emotional, sensory, and perceived layers of design that shape lasting impressions.',
+                  'Karigari exists to give form to feelings — crafting the nuances that turn products into experiences and ideas into lasting impact.'
+                ]
+              }
             ].map((item, idx) => (
               <motion.div
                 key={item.title}
@@ -111,15 +125,11 @@ const About: React.FC = () => {
                 className="bg-white dark:bg-secondary-dark p-8 border border-gray-200 dark:border-gray-700"
               >
                 <h3 className="text-2xl mb-4 text-black dark:text-white">{item.title}</h3>
-                {Array.isArray(item.text) ? (
-                  <ul className="text-gray-700 dark:text-gray-300 space-y-2">
-                    {item.text.map((point, index) => (
-                      <li key={index}>• {point}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-700 dark:text-gray-300">{item.text}</p>
-                )}
+                <ul className="text-gray-700 dark:text-gray-300 space-y-2">
+                  {item.text.map((point, index) => (
+                    <li key={index}>• {point}</li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -141,23 +151,39 @@ const About: React.FC = () => {
               The core values that drive our work and culture at Karigari.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             { [
-              "Craftsmanship in every detail",
-              "Human-centered approach",
-              "Continuous innovation",
-              "Integrity and transparency",
-              "Collaborative excellence"
+              {
+                title: "Empathy, Always",
+                description: "We design with people, not just for them. Every detail starts with understanding what matters to the ones who’ll use it."
+              },
+              {
+                title: "Craft, Obsessed",
+                description: "Precision isn’t polish - it’s philosophy. From surface finishes to UI glow, we obsess over what others overlook."
+              },
+              {
+                title: "Process with Principles",
+                description: "We don’t work in silos — we work in sync. Collaboration. Co-creation. Co-design. It’s how we make details speak."
+              },
+              {
+                title: "Curious Creatures",
+                description: "We question everything - because good design starts with good questions (and never ends with “that’s how it’s done”)."
+              },
+              {
+                title: "Intent Over Noise",
+                description: "We don’t design to impress. We design express - something useful, meaningful, and maybe even a little magical."
+              }
             ].map((value, idx) => (
               <motion.div
-                key={value}
+                key={value.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.8, delay: idx * 0.2 }}
                 className="bg-white dark:bg-secondary-dark p-8 border border-gray-200 dark:border-gray-700"
               >
-                <h3 className="text-2xl mb-4 text-black dark:text-white">{value}</h3>
+                <h3 className="text-2xl mb-4 text-black dark:text-white">{value.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300">{value.description}</p>
               </motion.div>
             ))}
           </div>

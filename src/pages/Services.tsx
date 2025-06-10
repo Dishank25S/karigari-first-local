@@ -6,7 +6,7 @@ import ContactSection from '../components/ContactSection';
 interface Service {
   id: number;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   image: string;
   link: string;
 }
@@ -15,28 +15,82 @@ const services: Service[] = [
   {
     id: 1,
     title: "Perception Design Consultancy",
-    description: "Our flagship service helps brands understand and optimize how their products are perceived through all senses. We evaluate existing products or concepts and provide strategic recommendations to enhance perceived quality.",
+    description: (
+      <>
+        An expert-led design advisory that helps you identify and shape the intangible attributes that make a product feel refined, intuitive, and desirable.<br />
+        <span className="font-semibold block mt-4 mb-1">What we do:</span>
+        <ul className="list-disc list-inside mb-2 text-[#4B5563]">
+          <li>Perception audits of existing products</li>
+          <li>User impression studies and persona-based evaluations</li>
+          <li>Refinement of surface quality, highlights, part junctions, proportions</li>
+          <li>Design language development aligned with sensory cues</li>
+        </ul>
+        <span className="font-semibold block mt-2 mb-1">Critical For:</span>
+        <span className="text-[#4B5563]">Automotive, Consumer Electronics, Appliances / White Goods, Furniture & Lifestyle</span>
+      </>
+    ),
     image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "/services/perception-design"
   },
   {
     id: 2,
     title: "Perceived Quality Process Setup",
-    description: "We help organizations establish robust internal processes for evaluating and ensuring perceived quality throughout product development cycles, from concept to market.",
+    description: (
+      <>
+        A structured integration of Perceived Quality into your existing product development workflow — across teams, timelines, and tools.<br />
+        <span className="font-semibold block mt-4 mb-1">What we do:</span>
+        <ul className="list-disc list-inside mb-2 text-[#4B5563]">
+          <li>Assess current design and development workflows</li>
+          <li>Identify gaps in perceptual decision-making</li>
+          <li>Create PQ checkpoints across design stages (concept, CAD, Class A, prototype)</li>
+          <li>Develop internal playbooks, guidelines, and perceptual KPIs</li>
+          <li>Train cross-functional teams to evaluate and act on PQ parameters</li>
+        </ul>
+        <span className="font-semibold block mt-2 mb-1">Critical For:</span>
+        <span className="text-[#4B5563]">OEMs & Tier 1 Suppliers in Automotive, Aerospace, and Industrial Design, Consumer Durables and Home Appliances, Medical Devices</span>
+      </>
+    ),
     image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "/services/quality-process"
   },
   {
     id: 3,
-    title: "Premiumization Value Mapping",
-    description: "Our specialized benchmarking helps brands understand competitive landscapes through the lens of perception, identifying opportunities to elevate products to premium status.",
+    title: "Premiumization Value Mapping & Benchmarking",
+    description: (
+      <>
+        A research and strategy service that helps you define what “premium” really means to your users — and how your product can deliver it.<br />
+        <span className="font-semibold block mt-4 mb-1">What we do:</span>
+        <ul className="list-disc list-inside mb-2 text-[#4B5563]">
+          <li>Conduct competitor and segment benchmarking</li>
+          <li>Map perception triggers: visual cues, tactile & sensory feedback</li>
+          <li>Identify perceptual gaps in your current product lineup</li>
+          <li>Define cost-effective design upgrades that create maximum perceived value</li>
+          <li>Help position product upgrades with stronger emotional and functional impact</li>
+        </ul>
+        <span className="font-semibold block mt-2 mb-1">Critical For:</span>
+        <span className="text-[#4B5563]">EV Startups & Mobility Brands, Appliance & Home Brands, Luxury Product Makers, Mid-range Product Lines</span>
+      </>
+    ),
     image: "https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "/services/premiumization"
   },
   {
     id: 4,
     title: "Automation Tools for Craftsmanship",
-    description: "We develop custom tools and frameworks to help teams systematically evaluate and improve the craftsmanship and perceived quality of their products.",
+    description: (
+      <>
+        We create AI-assisted, tech supported, semi-automated tools to assess visual and tactile quality - objectively and consistently.<br />
+        <span className="font-semibold block mt-4 mb-1">What we do:</span>
+        <ul className="list-disc list-inside mb-2 text-[#4B5563]">
+          <li>Define critical PQ parameters (gap, flush, symmetry, texture uniformity)</li>
+          <li>Develop digital checklists, perception scoring systems, and audit templates</li>
+          <li>Integrate visual assessment into CAD/Class A reviews</li>
+          <li>Customize tools for QA, tooling, and supplier teams</li>
+        </ul>
+        <span className="font-semibold block mt-2 mb-1">Critical For:</span>
+        <span className="text-[#4B5563]">Automotive & Aerospace, White Goods & Electronics, Design Studios, In-house R&D Labs, Tier 1 Suppliers</span>
+      </>
+    ),
     image: "https://images.pexels.com/photos/4098369/pexels-photo-4098369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "/services/automation-tools"
   }
