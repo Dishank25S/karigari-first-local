@@ -5,7 +5,7 @@ import ContactSection from '../components/ContactSection';
 
 const About: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-    const teamMembers = [
+  const teamMembers = [
     { id: 1, name: 'Team Member 1', role: 'Design Lead', quote: 'Design is not just what it looks like and feels like. Design is how it works.' },
     { id: 2, name: 'Team Member 2', role: 'UX Designer', quote: 'Good design is obvious. Great design is transparent.' },
     { id: 3, name: 'Team Member 3', role: 'Brand Strategist', quote: 'Design creates culture. Culture shapes values. Values determine the future.' },
@@ -49,14 +49,14 @@ const About: React.FC = () => {
             >
               <h2 className="mb-6 text-black dark:text-white">Our Story</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Founded in 2018, Karigari was born from a vision to bridge the gap between technical design excellence and human emotional response. We recognized that truly exceptional design speaks to people on a deeper, often subconscious level.
+                I’m Amit, Founder of Karigari. After nearly two decades in the automotive industry, I reached a moment of clarity - a realization that design could be so much more than just a layer of polish. It could be a language. A feeling. A promise.
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Our name, "Karigari," derives from the Hindi word for "craftsmanship," reflecting our commitment to meticulous attention to detail and the artisanal quality we bring to every project.
-              </p>
+                In over 18 years of working across global brands, one thing stood out - the most loved products weren’t just well-made, they were well-perceived. They felt right - in the hand, to the eye, and at an emotional level.              </p>
               <p className="text-gray-700 dark:text-gray-300">
-                Today, we work with discerning brands across industries who share our passion for design that resonates on a deeper level, creating experiences that form lasting connections with their audiences.
-              </p>
+                That difference came from the smallest details: the texture of a surface, the light on a curve, the harmony of form and function. And that’s where Karigari was born — a space where design is not decoration, but dialogue, where craftsmanship meets intent.
+                Through our verticals Kalp (Creative Studio) and Kaaya (Immersive Tech Hub), we blend design, technology, and human insight — helping brands express quality in ways that connect and endure.
+                Because in the end, it's not just what we make — it's how it makes people feel.              </p>
             </motion.div>
 
             <motion.div
@@ -126,6 +126,44 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Values Section */}
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-primary-dark">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="mb-6 text-black dark:text-white">Values</h2>
+            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+              The core values that drive our work and culture at Karigari.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            { [
+              "Craftsmanship in every detail",
+              "Human-centered approach",
+              "Continuous innovation",
+              "Integrity and transparency",
+              "Collaborative excellence"
+            ].map((value, idx) => (
+              <motion.div
+                key={value}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.8, delay: idx * 0.2 }}
+                className="bg-white dark:bg-secondary-dark p-8 border border-gray-200 dark:border-gray-700"
+              >
+                <h3 className="text-2xl mb-4 text-black dark:text-white">{value}</h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="py-16 md:py-24 bg-white dark:bg-secondary-dark">
         <div className="container-custom">
@@ -145,36 +183,36 @@ const About: React.FC = () => {
             {/* Carousel Container */}
             <div className="overflow-hidden">
               <AnimatePresence mode="wait">                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, x: 300 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -300 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="flex justify-center"
+                key={currentSlide}
+                initial={{ opacity: 0, x: 300 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -300 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="flex justify-center"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="group relative bg-white dark:bg-primary-dark border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden max-w-md w-full"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="group relative bg-white dark:bg-primary-dark border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden max-w-md w-full"
-                  >
-                    <div className="relative aspect-square overflow-hidden">
-                      <img
-                        src={`https://images.pexels.com/photos/${1000000 + teamMembers[currentSlide].id * 10}/pexels-photo-${1000000 + teamMembers[currentSlide].id * 10}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2`}
-                        alt={teamMembers[currentSlide].name}
-                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                      <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                        <h3 className="text-white text-lg mb-1">{teamMembers[currentSlide].name}</h3>
-                        <p className="text-gray-300 mb-2">{teamMembers[currentSlide].role}</p>
-                        <p className="text-gray-100 text-sm italic">
-                          "{teamMembers[currentSlide].quote}"
-                        </p>
-                      </div>
+                  <div className="relative aspect-square overflow-hidden">
+                    <img
+                      src={`https://images.pexels.com/photos/${1000000 + teamMembers[currentSlide].id * 10}/pexels-photo-${1000000 + teamMembers[currentSlide].id * 10}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2`}
+                      alt={teamMembers[currentSlide].name}
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    <div className="absolute bottom-4 left-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <h3 className="text-white text-lg mb-1">{teamMembers[currentSlide].name}</h3>
+                      <p className="text-gray-300 mb-2">{teamMembers[currentSlide].role}</p>
+                      <p className="text-gray-100 text-sm italic">
+                        "{teamMembers[currentSlide].quote}"
+                      </p>
                     </div>
-                  </motion.div>
+                  </div>
                 </motion.div>
+              </motion.div>
               </AnimatePresence>
             </div>
 
@@ -200,11 +238,10 @@ const About: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index 
-                      ? 'bg-black scale-125' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                      ? 'bg-black scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
