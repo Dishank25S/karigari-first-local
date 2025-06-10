@@ -1,3 +1,32 @@
+/* Import Forma font faces */
+@import url('/Forma/FormaDJR_Web/fonts.css');
+
+/* Helvetica Neue font-face (regular, bold, italic, etc.) */
+@font-face {
+  font-family: 'Helvatica';
+  src: url('/Helvatica/HelveticaNeueLTPro-Roman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvatica';
+  src: url('/Helvatica/HelveticaNeueLTPro-Bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvatica';
+  src: url('/Helvatica/HelveticaNeueLTPro-It.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Helvatica';
+  src: url('/Helvatica/HelveticaNeueLTPro-BdIt.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,10 +41,11 @@
     color: #171717;
     cursor: none;
     transition: background 0.3s, color 0.3s;
+    font-family: 'Helvatica', Arial, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', serif;
+    font-family: 'FormaDJRVariable', 'FormaDJRText', 'FormaDJRDisplay', 'FormaDJRDeck', 'FormaDJRBanner', 'FormaDJRMicro', sans-serif;
     color: #171717;
   }
 
