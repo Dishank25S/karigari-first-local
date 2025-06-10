@@ -22,16 +22,18 @@ const Footer: React.FC = () => {
             <p className="text-black mb-6 max-w-md text-sm sm:text-base">
               Translating human perception into design excellence. A premium design studio focused on craftsmanship and timeless elegance.
             </p>
-            <div className="flex items-center space-x-4">              <a 
-                href="https://linkedin.com" 
+            <div className="flex items-center space-x-4">
+              <a 
+                href="https://www.linkedin.com/company/karigari.ai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex items-center justify-center hover:text-black text-black transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} className="sm:w-[18px] sm:h-[18px]" />
-              </a>              <a 
-                href="https://instagram.com" 
+              </a>
+              <a 
+                href="https://www.instagram.com/karigari.ai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex items-center justify-center hover:text-black text-black transition-all duration-300"
