@@ -12,6 +12,11 @@ const HomeHero: React.FC = () => {
         className="w-full h-full object-cover"
         style={{ minHeight: '100vh', minWidth: '100vw' }}
       />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center drop-shadow-lg px-4">
+          Designing Perception, Shaping Perspective
+        </h1>
+      </div>
     </section>
   );
 };

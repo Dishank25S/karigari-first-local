@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 interface Project {
   id: number;
   title: string;
-  category: string;
+  industry: string; // changed from category
   description: string;
   image: string;
   aspectRatio: string;
@@ -14,49 +14,81 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Touch Interface UI",
-    category: "HMI Design",
-    description: "Revolutionary human-machine interface design that redefines user interaction through intuitive touch controls and seamless visual feedback systems.",
+    title: "PQ Project Support",
+    industry: "Automotive Industry",
+    description: "We partner with your teams to enhance perceived quality at every stage design, development, and execution. From surfaces to interfaces, we help turn customer expectations into high-quality experiences.",
     image: "image 2.jpg",
     aspectRatio: "aspect-[16/10]" // More balanced wide rectangle
   },  {
     id: 2,
-    title: "Silhouette Car Concept",
-    category: "Automotive Design",
-    description: "Sleek automotive silhouette showcasing modern aerodynamic principles with emphasis on form, function, and aesthetic harmony in vehicle design.",
+    title: "Premiumization Study & Perceived Value Mapping",
+    industry: "Automotive Design",
+    description: "We decode what “premium” means to your customer.Through ethnographic studies and sensory audits, we map perceived value across visual, tactile, and auditory touchpoints defining what truly justifies a higher price tag in their eyes.",
     image: "image 3.jpg",
     aspectRatio: "aspect-[4/3]" // Standard 4:3 ratio for better viewing
   },
   {
     id: 3,
-    title: "Wireframe Aircraft",
-    category: "Aerospace Engineering",
-    description: "Precision-engineered aircraft wireframe demonstrating structural integrity and aerodynamic efficiency through innovative design methodologies.",
+    title: "PQ Merit/ Demerit Study & Competition Analysis",
+    industry: "Aerospace Engineering",
+    description: "We evaluate how your product compares to competitors in terms of perceived value. Clear insights into strengths, gaps, and user impressions help shape better design decisions.",
     image: "image 5.jpg",
     aspectRatio: "aspect-[5/2]" // Much shorter height for ultra-wide images
   },
   {
     id: 4,
-    title: "Jet Turbine Detail",
-    category: "Mechanical Engineering",
-    description: "Intricate turbine component design highlighting the intersection of engineering excellence and manufacturing precision in aerospace applications.",
+    title: "Concept Development & Digital Sculpting",
+    industry: "Mechanical Engineering",
+    description: "From sketch to surface, we bring design ideas to life with form and finesse. Our sculpting process focuses on proportions, surfaces and details to ensure higher emotional appeal.",
     image: "image 6.jpg",
     aspectRatio: "aspect-[1/1]" // Perfect square - kept as is
   },
   {
     id: 5,
-    title: "Futuristic Aircraft",
-    category: "Concept Design",
-    description: "Next-generation aircraft concept that pushes the boundaries of conventional design while maintaining practical engineering considerations.",
+    title: "Brand Identity Design & CMF Strategy",
+    industry: "Concept Design",
+    description: "We design brands that look sharp and feel premium, on screen and in hand. From logos to materials and finishes, we build a unified identity that reflects your brand’s perception.",
     image: "image 10.png",
     aspectRatio: "aspect-[16/10]" // Standard golden ratio for better UX
   },  {
     id: 6,
-    title: "Smartphone Interface",
-    category: "Tech Product UI",
-    description: "Modern smartphone interface design focusing on user experience optimization and visual hierarchy for enhanced digital interaction.",
+    title: "Animation & VR Visualization",
+    industry: "Tech Product UI",
+    description: "We create high-end visuals and immersive experiences to preview your product before it’s built. Great for internal reviews, storytelling, and showcasing quality in motion.",
     image: "image 13.jpg",
     aspectRatio: "aspect-[9/8]" // Less elongated mobile format
+  },
+  {
+    id: 7,
+    title: "User Experience Audit & Redesign",
+    industry: "Consumer Electronics",
+    description: "We analyze and redesign digital and physical touchpoints for seamless, delightful user experiences that drive loyalty and satisfaction.",
+    image: "image 14.jpg",
+    aspectRatio: "aspect-[16/10]"
+  },
+  {
+    id: 8,
+    title: "PQ Process Setup",
+    industry: "FMCG",
+    description: "We help teams build systems to deliver quality consistently. From training to tools, we guide you in making PQ part of your everyday design and development process.",
+    image: "image 15.jpg",
+    aspectRatio: "aspect-[4/3]"
+  },
+  {
+    id: 9,
+    title: "Future Consumer Trend Reports",
+    industry: "Retail Design",
+    description: "Stay ahead of evolving expectations. We craft insight-driven reports combining socio-cultural research, design forecasting, and consumer behavior trends helping brands anticipate what the next generation of users will see as “quality.”",
+    image: "image 16.jpg",
+    aspectRatio: "aspect-[5/2]"
+  },
+  {
+    id: 10,
+    title: "Materiality, Design Quality & Sensory Impression Brief Analysis",
+    industry: "Marketing & Advertising",
+    description: "We review your design briefs through a perception lens. Our feedback ensures materials, textures, and details align with your brand’s quality goals—right from the start.",
+    image: "image 7.jpg",
+    aspectRatio: "aspect-[1/1]"
   }
 ];
 
@@ -80,7 +112,7 @@ const ProjectShowcase: React.FC = () => {
           </motion.div>
         </div>
         {/* Desktop/Laptop Layout */}
-        <div className="hidden md:block">
+        <div className="hidden md:block space-y-12">
           {/* Special layout for first two projects - side by side with staggered positioning */}
           {projects.slice(0, 2).length === 2 && (
             <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
@@ -109,7 +141,7 @@ const ProjectShowcase: React.FC = () => {
                     {/* Left Content */}
                     <div className="pl-4 sm:pl-6 lg:pl-8 space-y-4">                      <div>
                         <span className="text-black text-xs lg:text-sm tracking-widest font-medium uppercase mb-2 block">
-                          {projects[0].category}
+                          {projects[0].industry}
                         </span>
                         <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-serif font-bold mb-4 leading-tight">
                           {projects[0].title}
@@ -146,7 +178,7 @@ const ProjectShowcase: React.FC = () => {
                     {/* Right Content */}
                     <div className="pr-4 sm:pr-6 lg:pr-8 space-y-4">                      <div>
                         <span className="text-black text-xs lg:text-sm tracking-widest font-medium uppercase mb-2 block">
-                          {projects[1].category}
+                          {projects[1].industry}
                         </span>
                         <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-serif font-bold mb-4 leading-tight">
                           {projects[1].title}
@@ -173,7 +205,7 @@ const ProjectShowcase: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group"
+                className="group mb-12 last:mb-0"
               >
                 <div className="flex flex-col space-y-6">
                   {/* Image Section */}
@@ -194,7 +226,7 @@ const ProjectShowcase: React.FC = () => {
                   <div className={`w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] ${isEven ? '' : 'flex justify-end'}`}>
                     <div className={`${isEven ? 'w-3/5 pl-4 sm:pl-6 lg:pl-8' : 'w-1/2 pr-4 sm:pr-6 lg:pr-8'} space-y-4`}>                      <div>
                         <span className="text-black text-xs lg:text-sm tracking-widest font-medium uppercase mb-2 block">
-                          {project.category}
+                          {project.industry}
                         </span>
                         <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-serif font-bold mb-4 leading-tight">
                           {project.title}
@@ -229,7 +261,7 @@ const ProjectShowcase: React.FC = () => {
               </div>
               <div className="p-4 space-y-2">
                 <span className="text-black text-xs tracking-widest font-medium uppercase block">
-                  {project.category}
+                  {project.industry}
                 </span>
                 <h3 className="text-primary-light dark:text-primary-dark text-lg font-serif font-bold leading-tight">
                   {project.title}
