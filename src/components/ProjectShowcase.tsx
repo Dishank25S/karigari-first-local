@@ -143,7 +143,7 @@ const ProjectShowcase: React.FC = () => {
                         <span className="text-black text-xs lg:text-sm tracking-widest font-medium uppercase mb-2 block">
                           {projects[0].industry}
                         </span>
-                        <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-serif font-bold mb-4 leading-tight">
+                        <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-bold mb-4 leading-tight" style={{fontFamily: 'FormaDJRVariable, FormaDJRText, FormaDJRDisplay, FormaDJRDeck, FormaDJRBanner, FormaDJRMicro, sans-serif'}}>
                           {projects[0].title}
                         </h3>
                         <p className="text-secondary-light dark:text-secondary-dark text-sm lg:text-base leading-relaxed">
@@ -180,7 +180,7 @@ const ProjectShowcase: React.FC = () => {
                         <span className="text-black text-xs lg:text-sm tracking-widest font-medium uppercase mb-2 block">
                           {projects[1].industry}
                         </span>
-                        <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-serif font-bold mb-4 leading-tight">
+                        <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-bold mb-4 leading-tight" style={{fontFamily: 'FormaDJRVariable, FormaDJRText, FormaDJRDisplay, FormaDJRDeck, FormaDJRBanner, FormaDJRMicro, sans-serif'}}>
                           {projects[1].title}
                         </h3>
                         <p className="text-secondary-light dark:text-secondary-dark text-sm lg:text-base leading-relaxed">
@@ -228,7 +228,7 @@ const ProjectShowcase: React.FC = () => {
                         <span className="text-black text-xs lg:text-sm tracking-widest font-medium uppercase mb-2 block">
                           {project.industry}
                         </span>
-                        <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-serif font-bold mb-4 leading-tight">
+                        <h3 className="text-primary-light dark:text-primary-dark text-xl lg:text-2xl xl:text-3xl font-bold mb-4 leading-tight" style={{fontFamily: 'FormaDJRVariable, FormaDJRText, FormaDJRDisplay, FormaDJRDeck, FormaDJRBanner, FormaDJRMicro, sans-serif'}}>
                           {project.title}
                         </h3>
                         <p className="text-secondary-light dark:text-secondary-dark text-sm lg:text-base leading-relaxed">
@@ -250,7 +250,7 @@ const ProjectShowcase: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8 }}
-              className="group border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm"
+              className="group border border-gray-200 overflow-hidden bg-white shadow-sm"
             >
               <div className={`relative w-full ${project.aspectRatio}`}>
                 <img

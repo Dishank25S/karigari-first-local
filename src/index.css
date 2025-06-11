@@ -44,9 +44,14 @@
     font-family: 'Helvatica', Arial, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'FormaDJRVariable', 'FormaDJRText', 'FormaDJRDisplay', 'FormaDJRDeck', 'FormaDJRBanner', 'FormaDJRMicro', sans-serif;
+  h1, h2, h3, h4, h5, h6, .heading, .subheading, .section-title, .section-heading, .section-subheading {
+    font-family: 'FormaDJRVariable', 'FormaDJRText', 'FormaDJRDisplay', 'FormaDJRDeck', 'FormaDJRBanner', 'FormaDJRMicro', sans-serif !important;
     color: #171717;
+  }
+
+  /* All other text elements use Helvatica by default */
+  p, span, li, ul, ol, label, input, textarea, select, button, div, a {
+    font-family: 'Helvatica', Arial, sans-serif;
   }
 
   h1 {
@@ -154,10 +159,13 @@
     background: rgba(255,255,255,0.8);
     -webkit-backdrop-filter: blur(8px);
   }
-  .header-blur {
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.8);
+  .header-blur, .header-transparent {
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.08);
+    border-radius: 0 !important;
+    border: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
   }
 
   .navbar-glass {

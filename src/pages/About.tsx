@@ -200,11 +200,12 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="mb-6 text-black dark:text-white">Our Team</h2>
-            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              Meet the talented individuals who bring their passion, expertise, and diverse perspectives to every project.
+            <h2 className="mb-6 text-black dark:text-white heading">Our Experts</h2>
+            <p className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-base md:text-lg mb-0">
+              At Karigari, we don’t just design products—we shape how they’re perceived. Meet the team of creatives, technologists, and specialists who turn sensory insight into design impact.
             </p>
-          </motion.div>          {/* Team Carousel */}
+          </motion.div>
+          {/* Team Carousel */}
           <div className="relative">
             {/* Carousel Container */}
             <div className="overflow-hidden">
@@ -220,9 +221,9 @@ const About: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="group relative bg-white dark:bg-primary-dark border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden max-w-md w-full"
+                  className="group relative bg-white dark:bg-primary-dark border border-gray-200 dark:border-gray-700 overflow-hidden max-w-xs w-full" // portrait, sharp corners
                 >
-                  <div className="relative aspect-square overflow-hidden">
+                  <div className="relative" style={{ aspectRatio: '3/4' }}>
                     <img
                       src={`https://images.pexels.com/photos/${1000000 + teamMembers[currentSlide].id * 10}/pexels-photo-${1000000 + teamMembers[currentSlide].id * 10}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2`}
                       alt={teamMembers[currentSlide].name}
@@ -245,17 +246,17 @@ const About: React.FC = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 z-10"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 text-black hover:text-gray-700 transition-all duration-300 z-10 bg-transparent p-0 shadow-none"
               aria-label="Previous slide"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={32} />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 z-10"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 text-black hover:text-gray-700 transition-all duration-300 z-10 bg-transparent p-0 shadow-none"
               aria-label="Next slide"
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={32} />
             </button>
 
             {/* Slide Indicators */}
@@ -264,7 +265,7 @@ const About: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                  className={`w-3 h-3 transition-all duration-300 ${currentSlide === index
                       ? 'bg-black scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
                     }`}

@@ -60,17 +60,29 @@ const ContactSection: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div>
+                  <h4 className="text-lg font-medium mb-2 text-white">Address</h4>
+                  <p className="text-gray-200 whitespace-pre-line">
+                    Office 402, V18 Building,
+                    In front of Balewadi High Street,
+                    Baner, Pune, Maharashtra, India
+                  </p>
+                </div>
+                <div>
                   <h4 className="text-lg font-medium mb-2 text-white">Email</h4>
                   <a
-                    href="mailto:hello@karigari.studio"
-                    className="text-black bg-white px-2 py-1 rounded-md inline-block hover:opacity-90 transition"
+                    href="mailto:contact@karigari.ai"
+                    className="text-black bg-white px-2 py-1 inline-block hover:opacity-90 transition"
                   >
-                    hello@karigari.studio
+                    contact@karigari.ai
                   </a>
                 </div>
                 <div>
+                  <h4 className="text-lg font-medium mb-2 text-white">Phone</h4>
+                  <p className="text-gray-200">+91 82370 05747</p>
+                </div>
+                <div>
                   <h4 className="text-lg font-medium mb-2 text-white">Location</h4>
-                  <p className="text-gray-200">Mumbai, India</p>
+                  <p className="text-gray-200">Pune, Maharashtra</p>
                 </div>
               </div>
             </motion.div>
@@ -80,7 +92,7 @@ const ContactSection: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="bg-white p-8 border border-[#E5E5E5] backdrop-blur-md rounded-xl shadow-lg"
+              className="bg-white p-8 border border-[#E5E5E5] backdrop-blur-md shadow-lg"
             >
               <h3 className="text-2xl mb-6 text-[#171717]">Get in Touch</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
@@ -136,7 +148,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center bg-black hover:bg-neutral-800 text-white font-medium py-3 px-6 rounded-full transition duration-300"
+                  className="w-full flex items-center justify-center bg-black hover:bg-neutral-800 text-white font-medium py-3 px-6 transition duration-300"
                   disabled={loading}
                 >
                   {loading ? "Sending..." : "Send Message"}

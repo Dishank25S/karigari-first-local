@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/company/karigari.ai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex items-center justify-center hover:text-black text-black transition-all duration-300"
+                className="h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center hover:text-black text-black transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} className="sm:w-[18px] sm:h-[18px]" />
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/karigari.ai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex items-center justify-center hover:text-black text-black transition-all duration-300"
+                className="h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center hover:text-black text-black transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram size={16} className="sm:w-[18px] sm:h-[18px]" />
@@ -63,11 +63,11 @@ const Footer: React.FC = () => {
                 <input 
                   type="email" 
                   placeholder="Your email" 
-                  className="w-full py-2.5 px-4 pr-12 rounded-full bg-gray-100 text-black placeholder-gray-500 text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-black transition duration-200"
+                  className="w-full py-2.5 px-4 pr-12 bg-gray-100 text-black placeholder-gray-500 text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-black transition duration-200"
                 />
                 <button 
                   type="button"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black hover:bg-gray-800 text-white p-2 rounded-full transition duration-300 shadow-md"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black hover:bg-gray-800 text-white p-2 transition duration-300 shadow-md"
                   aria-label="Subscribe"
                 >
                   <ArrowRight size={16} />

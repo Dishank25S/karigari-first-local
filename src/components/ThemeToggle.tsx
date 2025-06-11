@@ -68,7 +68,7 @@ const Kalp: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="overflow-hidden border border-[#E5E5E5] bg-[#F5F5F5] rounded-lg">
+              <div className="overflow-hidden border border-[#E5E5E5] bg-[#F5F5F5]">
                 <img
                   src="https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="KALP Framework Visualization"
@@ -104,7 +104,7 @@ const Kalp: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white p-8 border border-[#E5E5E5] rounded-lg shadow-sm"
+                className="bg-white p-8 border border-[#E5E5E5] shadow-sm"
               >
                 <h3 className="text-xl font-semibold mb-4 text-[#171717]">{service.title}</h3>
                 <p className="text-[#4B5563]">{service.description}</p>
@@ -148,7 +148,7 @@ const Kalp: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="bg-[#F5F5F5] p-8 border border-[#E5E5E5] rounded-lg"
+              className="bg-[#F5F5F5] p-8 border border-[#E5E5E5]"
             >
               <blockquote className="text-xl font-serif italic text-[#4B5563] mb-6">
                 "KALP transformed our approach to product design, helping us create experiences that truly resonate with our customers on a deeper level."
